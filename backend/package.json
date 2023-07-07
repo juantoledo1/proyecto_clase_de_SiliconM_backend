@@ -1,0 +1,20 @@
+{
+  "name": "silicon2023",
+  "version": "1.0.0",
+  "description": "proyecto de la comision",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prueba"
+  ],
+  "author": "\"Juan Toledo\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22"
+  }
+}
