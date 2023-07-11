@@ -1,40 +1,19 @@
--- Valentina Studio --
--- MySQL dump --
--- ---------------------------------------------------------
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
--- ---------------------------------------------------------
-
-
 -- CREATE DATABASE "comisionB2023" -------------------------
 CREATE DATABASE IF NOT EXISTS `comisionB2023` CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `comisionB2023`;
--- ---------------------------------------------------------
-
 
 -- CREATE TABLE "equipos" --------------------------------------
-CREATE TABLE `equipos` ( 
+CREATE TABLE equipos ( 
 	`id_equipo` Int( 11 ) AUTO_INCREMENT NOT NULL,
 	`nombre` VarChar( 100 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
 	`id_tipo_equipo` Int( 11 ) NOT NULL,
 	`id_modelo` Int( 11 ) NULL,
 	`estado` Enum( 'A', 'B', 'C' ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
 	`serial` VarChar( 45 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-	`id_ubicacion` Int( 11 ) NULL,
-	PRIMARY KEY ( `id_equipo` ) )
-CHARACTER SET = latin1
-COLLATE = latin1_swedish_ci
-ENGINE = InnoDB
-AUTO_INCREMENT = 10;
--- -------------------------------------------------------------
-
-
--- CREATE TABLE "fabricantes" ----------------------------------
+	`id_ubicacion` Int( 11 ) NULL
+);
+  
+  -- CREATE TABLE "fabricantes" ----------------------------------
 CREATE TABLE `fabricantes` ( 
 	`id_fabricante` Int( 11 ) AUTO_INCREMENT NOT NULL,
 	`nombre` VarChar( 45 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -261,13 +240,9 @@ ALTER TABLE `modelos`
 	ON DELETE Restrict
 	ON UPDATE Restrict;
 -- -------------------------------------------------------------
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'cypresshill1';
 
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 -- ---------------------------------------------------------
 
-
+select * from comisionb2023.equipos;

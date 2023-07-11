@@ -1,10 +1,10 @@
-const mysql = require ('mysql');
+/*const mysql = require ('mysql');
 
-const mysqlconeccion = mysql.createConnection ({
+const mysqlconeccion = mysql.createConnection({
     host:'localhost',
     users:'root',
     passsword:'cypresshill1',
-    databases:'comisionB2023' 
+    databases:'comisionb2023' 
 });
 
 mysqlconeccion.connect(function(err){
@@ -16,4 +16,24 @@ mysqlconeccion.connect(function(err){
     }
 });
 
-module.exports= mysqlconeccion; 
+module.exports= mysqlconeccion;   */
+
+const mysql = require('mysql');
+
+const mysqlConeccion= mysql.createConnection({
+    host:'localhost',
+    user: 'root',
+    password: 'cypresshill1',
+    database: 'comisionB2023'
+});
+
+mysqlConeccion.connect(function(err){
+    if(err){
+        console.log('Mi error de conexion es: ', err)
+        return;
+    }else{
+        console.log('Mi coneccion se realizo correctamente!! y estoy muy feliz')
+    }
+})
+
+module.exports=mysqlConeccion;
